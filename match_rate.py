@@ -56,10 +56,7 @@ for line in a:
         total=len(second)
     match_rate=(match/total)*100
     
-    try:
-        cells.append(look_dict[cells[-1]])
-    except KeyError:
-        cells.append('NA')
+    cells.append(look_dict.get(cells[-1],'NA'))
     cells.append(str(match_rate)+'\n')
     
     b.write('|'.join(cells))
